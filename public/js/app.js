@@ -9,7 +9,7 @@ weatherform.addEventListener('submit',(e)=>{
     const location=search.value
     msg1.textContent='loading.'
     msg2.textContent=''
-    fetch('http://localhost:3000/weather?address='+encodeURIComponent(location)).then((response)=>{
+    fetch('/weather?address='+encodeURIComponent(location)).then((response)=>{ //by this it would be flexible and we can use it in local host or heroku
         response.json().then((data)=>{
             if(data.error)
             msg1.textContent=data.error

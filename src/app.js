@@ -5,6 +5,9 @@ const hbs=require('hbs')
 const geocode=require('./utils/geocode.js')
 const forecast =require('./utils/forecast.js')
 
+const port=process.env.PORT || 3000 //if running locally 3000 port will work as heroku would not provide port value  else other value would work
+
+
 //define paths for express config
 const publicpath=path.join(__dirname,'../public')
 const viewpath=path.join(__dirname,'../template/views')
@@ -99,6 +102,6 @@ res.render('error',{
 
 
 
-app.listen(3000,()=>{
-    console.log('server is up at port 3000')
+app.listen(port,()=>{
+    console.log('server is up at port '+ port)
 })

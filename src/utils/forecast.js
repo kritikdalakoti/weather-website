@@ -10,7 +10,9 @@ const forecast=(x,y,callback)=>{
         }else{
             callback(undefined,{
                 temperature:body.current.temperature,
-                name:body.location.name
+                name:body.location.name,
+                desc:body.current.weather_descriptions[0],
+                humidity:body.current.humidity
             })
         }
     })

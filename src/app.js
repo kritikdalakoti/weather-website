@@ -68,7 +68,7 @@ app.get('/weather',(req,res)=>{
                     })
                 }
 
-                forecast(latitude,longtitude,(error,{temperature,name})=>{
+                forecast(latitude,longtitude,(error,{temperature,name,desc,humidity})=>{
                         if(error){
                         return res.send({
                             error:error  //if works use short form
@@ -77,6 +77,8 @@ app.get('/weather',(req,res)=>{
                     res.send({
                         forecast:temperature,
                         location:place,
+                        desc:desc,
+                        humidity:humidity,
                         address:req.query.address
                     })
 
